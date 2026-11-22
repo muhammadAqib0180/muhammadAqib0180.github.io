@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: a confident personal site. Split hero (pitch + guard console), proof strip, featured project, card grid,
-   AI-video film strip, dark security band, contact band. One accent (signal orange), used sparingly. */
+   dark security band, contact band. One accent (signal orange), used sparingly. */
 :root {
   --bg: #F5F6F8;
   --surface: #FFFFFF;
@@ -170,17 +170,6 @@ section.block { padding-block: 84px 0; scroll-margin-top: 72px; }
 .agents span { padding: 7px 10px; border-radius: 8px; background: var(--bg); border: 1px solid var(--line); }
 .agents i { color: var(--muted); font-style: normal; }
 
-/* AI video strip */
-.film { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 36px; }
-.film-text { display: grid; gap: 16px; }
-.film-text h3 { font-size: 2rem; font-weight: 760; }
-.film-text p { color: var(--muted); }
-.phones { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.phone { aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; border: 4px solid var(--ink); background: var(--ink); max-width: 100%; }
-.phone img { width: 100%; height: 100%; object-fit: cover; }
-.phone:nth-child(even) { transform: translateY(18px); }
-.film .note { font-size: 0.8rem; color: var(--muted); }
-
 /* security band */
 .dark { background: var(--console); color: var(--console-ink); margin-top: 84px; padding-block: 84px; }
 .dark .eyebrow { color: #FFB089; }
@@ -231,7 +220,7 @@ footer .wrap { padding-block: 0 28px; display: flex; justify-content: space-betw
 
 /* responsive */
 @media (max-width: 980px) {
-  .hero .wrap, .featured, .film, .two, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero .wrap, .featured, .two, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
   .shot { border-right: 0; border-bottom: 1px solid var(--line); }
   .grid, .posts, .defs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .card.wide { grid-column: span 2; }
@@ -246,12 +235,10 @@ footer .wrap { padding-block: 0 28px; display: flex; justify-content: space-betw
   .proof .item:nth-child(n+3) { border-top: 1px solid var(--line); }
   .grid, .posts, .defs { grid-template-columns: minmax(0, 1fr); }
   .card.wide { grid-column: auto; }
-  .feat-body, .film { padding: 22px; }
+  .feat-body { padding: 22px; }
   .shot { padding: 16px; }
   .play { left: 26px; bottom: 26px; }
   .minis { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .phone:nth-child(even) { transform: none; }
   .research { grid-template-columns: minmax(0, 1fr); }
   .t-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .console-foot { grid-template-columns: minmax(0, 1fr); }
@@ -272,7 +259,6 @@ footer .wrap { padding-block: 0 28px; display: flex; justify-content: space-betw
     <ul>
       <li><a href="#work">Work</a></li>
       <li><a href="#security">Security</a></li>
-      <li><a href="#video">AI video</a></li>
       <li><a href="#about">About</a></li>
     </ul>
     <a class="btn btn-dark" href="#contact">Get in touch</a>
@@ -426,26 +412,6 @@ footer .wrap { padding-block: 0 28px; display: flex; justify-content: space-betw
     </div>
   </section>
 
-  <section class="block" id="video">
-    <div class="wrap">
-      <article class="film">
-        <div class="film-text">
-          <span class="eyebrow">Also · AI video</span>
-          <h3>I make AI video ads, too</h3>
-          <p>Script, AI creator, motion, voice, lip-sync and edit, for brands on TikTok and Reels. This one is a 27-second spec ad: every shot has real motion, and the product label is restored frame by frame where the model garbled it.</p>
-          <div class="links"><a href="https://www.tiktok.com/@ugcbyaqib" target="_blank" rel="noopener">More on TikTok</a></div>
-          <p class="note">Spec ad for a UK skincare brand: a concept piece, not affiliated with or endorsed by the brand.</p>
-        </div>
-        <div class="phones">
-          <div class="phone"><img src="assets/ad-hook.jpg" alt="AI creator holding the product, hook caption 'made from food waste?!'" loading="lazy" width="540" height="960"></div>
-          <div class="phone"><img src="assets/ad-apply.jpg" alt="AI creator applying moisturiser while facing the camera" loading="lazy" width="540" height="960"></div>
-          <div class="phone"><img src="assets/ad-result.jpg" alt="AI creator touching her cheek to show the result" loading="lazy" width="540" height="960"></div>
-          <div class="phone"><img src="assets/ad-endcard.jpg" alt="End card with the product and a call to action" loading="lazy" width="540" height="960"></div>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <section class="block" id="about">
     <div class="wrap">
       <div class="head">
@@ -454,14 +420,14 @@ footer .wrap { padding-block: 0 28px; display: flex; justify-content: space-betw
       <div class="two">
         <div class="timeline">
           <div class="t-row"><span class="when">Jul – Sep 2026</span><div><h3>Backend AI Engineering Intern · Flyrank AI</h3><p>Async FastAPI microservices and REST APIs, plus data extraction pipelines with strict JSON Schema validation that stop bad records before they reach production.</p></div></div>
-          <div class="t-row"><span class="when">Ongoing</span><div><h3>Freelance AI engineer</h3><p>n8n and Make automations, RAG chatbots, document data extraction and AI video ads, on Fiverr and Upwork.</p></div></div>
+          <div class="t-row"><span class="when">Ongoing</span><div><h3>Freelance AI engineer</h3><p>n8n and Make automations, RAG chatbots and document data extraction, for clients on Fiverr and Upwork.</p></div></div>
           <div class="t-row"><span class="when">2023 – 2027</span><div><h3>BS Computer Science · FAST-NUCES</h3><p>Islamabad. Final-year project on LLM safety for Roman Urdu.</p></div></div>
         </div>
         <div class="skills">
           <div><h4>LLM & agents</h4><div class="tags"><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">MCP</span><span class="tag">RAG</span><span class="tag">function calling</span><span class="tag">evals</span><span class="tag">Gemini</span><span class="tag">Claude</span></div></div>
           <div><h4>Security</h4><div class="tags"><span class="tag sec">prompt-injection defence</span><span class="tag sec">guard models</span><span class="tag sec">PII redaction</span><span class="tag sec">SAST (Bandit)</span></div></div>
           <div><h4>Backend</h4><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">asyncio</span><span class="tag">Postgres</span><span class="tag">Supabase</span><span class="tag">Docker</span><span class="tag">pytest</span></div></div>
-          <div><h4>Automation & video</h4><div class="tags"><span class="tag">n8n</span><span class="tag">Make</span><span class="tag">Zapier</span><span class="tag">Apify</span><span class="tag">Kling</span><span class="tag">Veo</span><span class="tag">CapCut</span></div></div>
+          <div><h4>Automation</h4><div class="tags"><span class="tag">n8n</span><span class="tag">Make</span><span class="tag">Zapier</span><span class="tag">Apify</span><span class="tag">Webhooks</span><span class="tag">Slack</span></div></div>
         </div>
       </div>
     </div>
